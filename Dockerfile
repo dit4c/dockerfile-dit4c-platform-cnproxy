@@ -56,8 +56,8 @@ ADD /opt /opt
 VOLUME ["/var/cache", "/var/log"]
 
 RUN mkdir -p /etc/nginx/conf.d && \
-  touch /etc/nginx/conf.d/portal_url.conf && \
-  chown nginx:nginx /etc/nginx/conf.d/portal_url.conf
+  touch /etc/nginx/conf.d/variables.conf && \
+  chown nginx:nginx /etc/nginx/conf.d/variables.conf
 
 USER nginx
 
