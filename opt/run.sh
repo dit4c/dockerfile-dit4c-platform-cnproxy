@@ -1,8 +1,8 @@
 #!/bin/sh
 
 
-export GATEHOUSE_URL=${GATEHOUSE_URL:-$(echo $GATEHOUSE_PORT | sed -e 's/tcp/http/')}
-export MACHINESHOP_URL=${MACHINESHOP_URL:-$(echo $MACHINESHOP_PORT | sed -e 's/tcp/http/')}
+export GATEHOUSE_URL=${GATEHOUSE_URL:-http://$(getent hosts gatehouse | awk '{ print $1 }'):8080}
+export MACHINESHOP_URL=${MACHINESHOP_URL:-http://$(getent hosts machineshop | awk '{ print $1 }'):8080}
 
 if [[ "$PORTAL_URL" == "" ]]; then
   echo "PORTAL_URL must be defined" 1>&2
