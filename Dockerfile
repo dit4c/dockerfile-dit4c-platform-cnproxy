@@ -1,8 +1,8 @@
-FROM alpine:3.2
+FROM alpine:3.3
 MAINTAINER Tim Dettrick <t.dettrick@uq.edu.au>
 
 # Statically compile nginx, then remove build tools
-RUN export NGINX_VERSION=1.8.0 && \
+RUN export NGINX_VERSION=1.8.1 && \
   export NGINX_CACHE_DIR=/var/cache/nginx && \
   export NGINX_LOG_DIR=/var/log/nginx && \
   export NGINX_RUN_DIR=/var/run/nginx && \
